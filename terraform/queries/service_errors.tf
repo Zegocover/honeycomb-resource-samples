@@ -9,7 +9,7 @@ data "honeycombio_query_specification" "service-errors" {
     value  = "true"
   }
 
-  breakdowns = ["service.name", "http.status_code", "status_message"]
+  breakdowns = ["service.name", "http.status_code"]
 }
 
 output "service-errors-query-json" {
