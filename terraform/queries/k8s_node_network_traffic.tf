@@ -10,7 +10,7 @@ data "honeycombio_query_specification" "k8s-node-network-traffic" {
   }
 
   filter {
-    column = "k8s.resource.type"
+    column = "k8s.container.name"
     op     = "="
     value  = "node"
   }

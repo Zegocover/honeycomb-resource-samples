@@ -1,16 +1,16 @@
 data "honeycombio_query_specification" "k8s-namespace-cpu-and-memory" {
   calculation {
     op     = "AVG"
-    column = "metrics.cpu.usage"
+    column = "container.cpu.utilization"
   }
 
   calculation {
     op     = "AVG"
-    column = "metrics.memory.usage"
+    column = "container.memory.usage"
   }
 
   filter {
-    column = "k8s.resource.type"
+    column = "k8s.container.name"
     op     = "="
     value  = "pod"
   }
@@ -18,7 +18,7 @@ data "honeycombio_query_specification" "k8s-namespace-cpu-and-memory" {
   breakdowns = ["k8s.namespace.name"]
 
   order {
-    column = "metrics.cpu.usage"
+    column = "container.cpu.utilization"
     op     = "AVG"
     order  = "descending"
   }

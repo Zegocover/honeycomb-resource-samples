@@ -5,7 +5,7 @@ data "honeycombio_query_specification" "k8s-pod-restarts" {
   }
 
   filter {
-    column = "k8s.resource.type"
+    column = "k8s.container.name"
     op     = "="
     value  = "pod"
   }
