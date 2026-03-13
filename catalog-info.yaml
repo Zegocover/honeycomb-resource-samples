@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: honeycomb-resource-samples
+spec:
+  owner: honeycombio/solution-architects
+  domain: delivery
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: honeycomb-resource-samples
+  title: Honeycomb Resource Samples
+  description: A collection of useful resources that can be applied to the Honeycomb platform.
+  tags:
+    - terraform
+    - go
+    - python
+  annotations:
+    backstage.io/source-location: url:https://github.com/Zegocover/honeycomb-resource-samples/
+    backstage.io/techdocs-ref: dir:.
+    buildkite.com/project-slug: tego/honeycomb-resource-samples
+    snyk.io/org-id: 00dc4193-3d34-4bb9-b51c-91c6362e0796
+    snyk.io/targets: Zegocover/honeycomb-resource-samples
+  links: []
+spec:
+  type: tool
+  owner: honeycombio/solution-architects
+  lifecycle: deprecated
+  system: honeycomb-resource-samples
